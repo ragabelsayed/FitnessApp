@@ -13,7 +13,7 @@ class MyDiaryScreen extends StatefulWidget {
 class _MyDiaryScreenState extends State<MyDiaryScreen>
     with SingleTickerProviderStateMixin {
   List<Widget> _listViews = [];
-  late AnimationController _animationController;
+  AnimationController _animationController;
 
   @override
   void initState() {
@@ -22,6 +22,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
       vsync: this,
       duration: const Duration(milliseconds: 600),
     );
+    _addAllListData();
   }
 
   @override

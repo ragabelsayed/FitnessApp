@@ -11,10 +11,10 @@ class TitleView extends StatelessWidget {
   final Animation animation;
 
   const TitleView({
-    required this.titleText,
-    required this.subText,
-    required this.animationController,
-    required this.animation,
+    this.titleText,
+    this.subText,
+    this.animationController,
+    this.animation,
   });
   @override
   Widget build(BuildContext context) {
