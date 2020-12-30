@@ -24,3 +24,5 @@ flutter:
   assets:
   
     - lib/assets/images/unnamed.png
+    - lib/assets/images/eaten.png
+    - lib/assets/images/burned.png
