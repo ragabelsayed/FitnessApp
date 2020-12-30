@@ -37,7 +37,7 @@ class MediterraneasnDietView extends StatelessWidget {
                   ),
                   boxShadow: [
                     BoxShadow(
-                      color: AppTheme.gray.withOpacity(1),
+                      color: AppTheme.gray.withOpacity(0.2),
                       offset: Offset(1.1, 1.1),
                       blurRadius: 10.0,
                     ),
