@@ -1,4 +1,5 @@
 import 'package:fitness_app/app_theme.dart';
+import 'package:fitness_app/widgets/meals_list_view.dart';
 import 'package:fitness_app/widgets/mediterranean_diet_view.dart';
 
 import 'package:fitness_app/widgets/title_view.dart';
@@ -76,6 +77,22 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
             parent: _animationController,
             curve: Interval(
               (1 / count) * 2,
+              1.0,
+              curve: Curves.fastOutSlowIn,
+            ),
+          ),
+        ),
+      ),
+    );
+
+    _listViews.add(
+      MealsListView(
+        mainSctreenAnimationController: _animationController,
+        mainSctreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+            parent: _animationController,
+            curve: Interval(
+              (1 / count) * 3,
               1.0,
               curve: Curves.fastOutSlowIn,
             ),
