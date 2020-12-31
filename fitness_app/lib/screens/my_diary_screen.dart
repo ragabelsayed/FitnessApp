@@ -100,6 +100,24 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
         ),
       ),
     );
+
+    _listViews.add(
+      TitleView(
+        titleText: 'Body measurement',
+        subText: 'Today',
+        animationController: _animationController,
+        animation: Tween<double>(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+            parent: _animationController,
+            curve: Interval(
+              (1 / count) * 4,
+              1.0,
+              curve: Curves.fastOutSlowIn,
+            ),
+          ),
+        ),
+      ),
+    );
   }
 
   Future<bool> _getData() async {
