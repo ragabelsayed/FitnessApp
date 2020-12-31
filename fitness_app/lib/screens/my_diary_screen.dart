@@ -87,8 +87,8 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
 
     _listViews.add(
       MealsListView(
-        mainSctreenAnimationController: _animationController,
-        mainSctreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
+        mainScreenAnimationController: _animationController,
+        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
             parent: _animationController,
             curve: Interval(
