@@ -1,4 +1,5 @@
 import 'package:fitness_app/app_theme.dart';
+import 'package:fitness_app/widgets/wave_view.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -256,7 +257,9 @@ class WaterView extends StatelessWidget {
                               ),
                             ],
                           ),
-                          child: Text('sgsdgdgs'),
+                          child: WaveView(
+                            percentageValue: 60.0,
+                          ),
                         ),
                       ),
                     ],
