@@ -4,6 +4,7 @@ import 'package:fitness_app/widgets/meals_list_view.dart';
 import 'package:fitness_app/widgets/mediterranean_diet_view.dart';
 
 import 'package:fitness_app/widgets/title_view.dart';
+import 'package:fitness_app/widgets/water_view.dart';
 import 'package:flutter/material.dart';
 
 class MyDiaryScreen extends StatefulWidget {
@@ -146,6 +147,22 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
             parent: _animationController,
             curve: Interval(
               (1 / count) * 6,
+              1.0,
+              curve: Curves.fastOutSlowIn,
+            ),
+          ),
+        ),
+      ),
+    );
+
+    _listViews.add(
+      WaterView(
+        animationController: _animationController,
+        animation: Tween<double>(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+            parent: _animationController,
+            curve: Interval(
+              (1 / count) * 7,
               1.0,
               curve: Curves.fastOutSlowIn,
             ),

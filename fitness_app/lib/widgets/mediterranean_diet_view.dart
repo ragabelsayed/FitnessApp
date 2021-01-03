@@ -29,7 +29,7 @@ class MediterraneasnDietView extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   color: AppTheme.white,
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(8.0),
                     bottomLeft: Radius.circular(8.0),
                     bottomRight: Radius.circular(8.0),
@@ -38,7 +38,7 @@ class MediterraneasnDietView extends StatelessWidget {
                   boxShadow: [
                     BoxShadow(
                       color: AppTheme.gray.withOpacity(0.2),
-                      offset: Offset(1.1, 1.1),
+                      offset: const Offset(1.1, 1.1),
                       blurRadius: 10.0,
                     ),
                   ],
@@ -64,8 +64,9 @@ class MediterraneasnDietView extends StatelessWidget {
                                         decoration: BoxDecoration(
                                             color: HexColor('#87A0E5')
                                                 .withOpacity(0.5),
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(4.0))),
+                                            borderRadius:
+                                                const BorderRadius.all(
+                                                    Radius.circular(4.0))),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.all(8.0),
@@ -147,7 +148,7 @@ class MediterraneasnDietView extends StatelessWidget {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 8,
                                   ),
                                   Row(
@@ -158,8 +159,9 @@ class MediterraneasnDietView extends StatelessWidget {
                                         decoration: BoxDecoration(
                                             color: HexColor('#F56E98')
                                                 .withOpacity(0.5),
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(4.0))),
+                                            borderRadius:
+                                                const BorderRadius.all(
+                                                    Radius.circular(4.0))),
                                       ),
                                       Padding(
                                         padding: const EdgeInsets.all(8.0),
@@ -258,7 +260,7 @@ class MediterraneasnDietView extends StatelessWidget {
                                       height: 100,
                                       decoration: BoxDecoration(
                                         color: AppTheme.white,
-                                        borderRadius: BorderRadius.all(
+                                        borderRadius: const BorderRadius.all(
                                           Radius.circular(100.0),
                                         ),
                                         border: Border.all(
@@ -278,7 +280,6 @@ class MediterraneasnDietView extends StatelessWidget {
                                             style: GoogleFonts.roboto(
                                               fontWeight: FontWeight.normal,
                                               fontSize: 24,
-                                              letterSpacing: 0.0,
                                               color: AppTheme.nearlyDarkBlue,
                                             ),
                                           ),
@@ -288,7 +289,6 @@ class MediterraneasnDietView extends StatelessWidget {
                                             style: GoogleFonts.roboto(
                                               fontWeight: FontWeight.bold,
                                               fontSize: 12,
-                                              letterSpacing: 0.0,
                                               color: AppTheme.gray
                                                   .withOpacity(0.5),
                                             ),
@@ -310,7 +310,7 @@ class MediterraneasnDietView extends StatelessWidget {
                                             (360 - 140) *
                                                 (1.0 - animation.value),
                                       ),
-                                      child: SizedBox(
+                                      child: const SizedBox(
                                         width: 108,
                                         height: 108,
                                       ),
@@ -334,7 +334,8 @@ class MediterraneasnDietView extends StatelessWidget {
                         height: 2,
                         decoration: BoxDecoration(
                           color: AppTheme.background,
-                          borderRadius: BorderRadius.all(Radius.circular(4.0)),
+                          borderRadius:
+                              const BorderRadius.all(Radius.circular(4.0)),
                         ),
                       ),
                     ),
@@ -370,7 +371,7 @@ class MediterraneasnDietView extends StatelessWidget {
                                     decoration: BoxDecoration(
                                       color:
                                           HexColor('#87A0E5').withOpacity(0.2),
-                                      borderRadius: BorderRadius.all(
+                                      borderRadius: const BorderRadius.all(
                                           Radius.circular(4.0)),
                                     ),
                                     child: Row(
@@ -386,8 +387,9 @@ class MediterraneasnDietView extends StatelessWidget {
                                                       .withOpacity(0.5),
                                                 ],
                                               ),
-                                              borderRadius: BorderRadius.all(
-                                                  Radius.circular(4.0))),
+                                              borderRadius:
+                                                  const BorderRadius.all(
+                                                      Radius.circular(4.0))),
                                         ),
                                       ],
                                     ),
@@ -435,7 +437,7 @@ class MediterraneasnDietView extends StatelessWidget {
                                         decoration: BoxDecoration(
                                           color: HexColor('#F56E98')
                                               .withOpacity(0.2),
-                                          borderRadius: BorderRadius.all(
+                                          borderRadius: const BorderRadius.all(
                                               Radius.circular(4.0)),
                                         ),
                                         child: Row(
@@ -453,7 +455,7 @@ class MediterraneasnDietView extends StatelessWidget {
                                                     ],
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.all(
+                                                      const BorderRadius.all(
                                                           Radius.circular(
                                                               4.0))),
                                             ),
@@ -506,7 +508,7 @@ class MediterraneasnDietView extends StatelessWidget {
                                         decoration: BoxDecoration(
                                           color: HexColor('#F1B440')
                                               .withOpacity(0.2),
-                                          borderRadius: BorderRadius.all(
+                                          borderRadius: const BorderRadius.all(
                                               Radius.circular(4.0)),
                                         ),
                                         child: Row(
@@ -524,7 +526,7 @@ class MediterraneasnDietView extends StatelessWidget {
                                                     ],
                                                   ),
                                                   borderRadius:
-                                                      BorderRadius.all(
+                                                      const BorderRadius.all(
                                                           Radius.circular(
                                                               4.0))),
                                             ),

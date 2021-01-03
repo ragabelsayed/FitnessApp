@@ -29,7 +29,7 @@ class BodyMeasurementView extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(
                   color: AppTheme.white,
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     bottomLeft: Radius.circular(8.0),
                     bottomRight: Radius.circular(8.0),
                     topLeft: Radius.circular(8.0),
@@ -38,7 +38,7 @@ class BodyMeasurementView extends StatelessWidget {
                   boxShadow: [
                     BoxShadow(
                       color: AppTheme.gray.withOpacity(0.2),
-                      offset: Offset(1.1, 1.1),
+                      offset: const Offset(1.1, 1.1),
                       blurRadius: 10.0,
                     ),
                   ],
@@ -164,7 +164,7 @@ class BodyMeasurementView extends StatelessWidget {
                         height: 2,
                         decoration: BoxDecoration(
                           color: AppTheme.background,
-                          borderRadius: BorderRadius.all(
+                          borderRadius: const BorderRadius.all(
                             Radius.circular(4.0),
                           ),
                         ),

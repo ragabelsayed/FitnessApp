@@ -210,7 +210,7 @@ class MealsView extends StatelessWidget {
                                           BoxShadow(
                                             color: AppTheme.nearlyBlack
                                                 .withOpacity(0.4),
-                                            offset: Offset(8.0, 8.0),
+                                            offset: const Offset(8.0, 8.0),
                                             blurRadius: 8.0,
                                           ),
                                         ],

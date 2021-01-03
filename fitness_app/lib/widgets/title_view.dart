@@ -61,7 +61,7 @@ class TitleView extends StatelessWidget {
                                 color: AppTheme.nearlyDarkBlue,
                               ),
                             ),
-                            SizedBox(
+                            const SizedBox(
                               height: 38,
                               width: 26,
                               child: Icon(
