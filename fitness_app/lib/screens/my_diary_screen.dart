@@ -1,5 +1,6 @@
 import 'package:fitness_app/app_theme.dart';
 import 'package:fitness_app/widgets/body_measurement.dart';
+import 'package:fitness_app/widgets/glass_view.dart';
 import 'package:fitness_app/widgets/meals_list_view.dart';
 import 'package:fitness_app/widgets/mediterranean_diet_view.dart';
 
@@ -163,6 +164,22 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
             parent: _animationController,
             curve: Interval(
               (1 / count) * 7,
+              1.0,
+              curve: Curves.fastOutSlowIn,
+            ),
+          ),
+        ),
+      ),
+    );
+
+    _listViews.add(
+      GlassView(
+        animationController: _animationController,
+        animation: Tween<double>(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+            parent: _animationController,
+            curve: Interval(
+              (1 / count) * 8,
               1.0,
               curve: Curves.fastOutSlowIn,
             ),
