@@ -34,3 +34,5 @@ flutter:
     - lib/assets/images/bell.png
     - lib/assets/images/bottle.png
     - lib/assets/images/glass.png
+    - lib/assets/images/back.png
+    - lib/assets/images/runner.png
