@@ -1,5 +1,6 @@
 import 'package:fitness_app/app_theme.dart';
 import 'package:fitness_app/widgets/title_view.dart';
+import 'package:fitness_app/widgets/workout_view.dart';
 import 'package:flutter/material.dart';
 
 class TrainingScreen extends StatefulWidget {
@@ -37,6 +38,22 @@ class _TrainingScreenState extends State<TrainingScreen>
             parent: _animationController,
             curve: Interval(
               (1 / count) * 0,
+              1.0,
+              curve: Curves.fastOutSlowIn,
+            ),
+          ),
+        ),
+      ),
+    );
+
+    _listviews.add(
+      WorkoutView(
+        animationController: _animationController,
+        animation: Tween<double>(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+            parent: _animationController,
+            curve: Interval(
+              (1 / count) * 2,
               1.0,
               curve: Curves.fastOutSlowIn,
             ),
