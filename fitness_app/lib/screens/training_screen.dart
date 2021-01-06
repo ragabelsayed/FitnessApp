@@ -24,7 +24,27 @@ class _TrainingScreenState extends State<TrainingScreen>
     _addAllListData();
   }
 
-  void _addAllListData() {}
+  void _addAllListData() {
+    const int count = 5;
+
+    _listviews.add(
+      TitleView(
+        titleText: 'Your program',
+        subText: 'Details',
+        animationController: _animationController,
+        animation: Tween<double>(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+            parent: _animationController,
+            curve: Interval(
+              (1 / count) * 0,
+              1.0,
+              curve: Curves.fastOutSlowIn,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 
   @override
   void dispose() {
