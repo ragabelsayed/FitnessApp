@@ -12,6 +12,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MyDiaryScreen extends StatefulWidget {
   static const routeName = '/';
+  final AnimationController animationController;
+
+  const MyDiaryScreen({this.animationController});
 
   @override
   _MyDiaryScreenState createState() => _MyDiaryScreenState();
@@ -19,7 +22,6 @@ class MyDiaryScreen extends StatefulWidget {
 
 class _MyDiaryScreenState extends State<MyDiaryScreen>
     with SingleTickerProviderStateMixin {
-  AnimationController _animationController;
   List<Widget> _listViews = [];
   Animation _topBarAnimation;
   double _topBarOpacity = 0.0;
@@ -29,13 +31,10 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 600),
-    );
+
     _topBarAnimation =
         Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-      parent: _animationController,
+      parent: widget.animationController,
       curve: Interval(0, 0.5, curve: Curves.fastOutSlowIn),
     ));
     _addAllListData();
@@ -64,22 +63,16 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
     });
   }
 
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
-  }
-
   void _addAllListData() {
     const int count = 9;
     _listViews.add(
       TitleView(
         titleText: 'Mediterranean diet',
         subText: 'Details',
-        animationController: _animationController,
+        animationController: widget.animationController,
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
-            parent: _animationController,
+            parent: widget.animationController,
             curve: Interval(
               (1 / count) * 0,
               1.0,
@@ -91,10 +84,10 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
     );
     _listViews.add(
       MediterraneasnDietView(
-        animationController: _animationController,
+        animationController: widget.animationController,
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
-            parent: _animationController,
+            parent: widget.animationController,
             curve: Interval(
               (1 / count) * 1,
               1.0,
@@ -108,10 +101,10 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
       TitleView(
         titleText: 'Meals today',
         subText: 'Customize',
-        animationController: _animationController,
+        animationController: widget.animationController,
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
-            parent: _animationController,
+            parent: widget.animationController,
             curve: Interval(
               (1 / count) * 2,
               1.0,
@@ -124,10 +117,10 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
 
     _listViews.add(
       MealsListView(
-        mainScreenAnimationController: _animationController,
+        mainScreenAnimationController: widget.animationController,
         mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
-            parent: _animationController,
+            parent: widget.animationController,
             curve: Interval(
               (1 / count) * 3,
               1.0,
@@ -142,10 +135,10 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
       TitleView(
         titleText: 'Body measurement',
         subText: 'Today',
-        animationController: _animationController,
+        animationController: widget.animationController,
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
-            parent: _animationController,
+            parent: widget.animationController,
             curve: Interval(
               (1 / count) * 4,
               1.0,
@@ -158,10 +151,10 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
 
     _listViews.add(
       BodyMeasurementView(
-        animationController: _animationController,
+        animationController: widget.animationController,
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
-            parent: _animationController,
+            parent: widget.animationController,
             curve: Interval(
               (1 / count) * 5,
               1.0,
@@ -176,10 +169,10 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
       TitleView(
         titleText: 'Water',
         subText: 'Aque SmartBottle',
-        animationController: _animationController,
+        animationController: widget.animationController,
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
-            parent: _animationController,
+            parent: widget.animationController,
             curve: Interval(
               (1 / count) * 6,
               1.0,
@@ -192,10 +185,10 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
 
     _listViews.add(
       WaterView(
-        animationController: _animationController,
+        animationController: widget.animationController,
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
-            parent: _animationController,
+            parent: widget.animationController,
             curve: Interval(
               (1 / count) * 7,
               1.0,
@@ -208,10 +201,10 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
 
     _listViews.add(
       GlassView(
-        animationController: _animationController,
+        animationController: widget.animationController,
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
-            parent: _animationController,
+            parent: widget.animationController,
             curve: Interval(
               (1 / count) * 8,
               1.0,
@@ -277,7 +270,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
             itemCount: _listViews.length,
             scrollDirection: Axis.vertical,
             itemBuilder: (context, index) {
-              _animationController.forward();
+              widget.animationController.forward();
               return _listViews[index];
             },
           );
@@ -290,7 +283,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
     return Column(
       children: [
         AnimatedBuilder(
-          animation: _animationController,
+          animation: widget.animationController,
           builder: (context, child) {
             return FadeTransition(
               opacity: _topBarAnimation,

@@ -1,5 +1,6 @@
-import 'package:fitness_app/screens/my_diary_screen.dart';
 import 'package:flutter/material.dart';
+
+import 'screens/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -14,7 +15,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: MyDiaryScreen(),
+      home: HomeScreen(),
+      //home: MyDiaryScreen(),
       routes: {},
     );
   }
