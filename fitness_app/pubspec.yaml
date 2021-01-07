@@ -36,3 +36,6 @@ flutter:
     - lib/assets/images/glass.png
     - lib/assets/images/back.png
     - lib/assets/images/runner.png
+    - lib/assets/images/area1.png
+    - lib/assets/images/area2.png
+    - lib/assets/images/area3.png

@@ -1,4 +1,5 @@
 import 'package:fitness_app/app_theme.dart';
+import 'package:fitness_app/widgets/area_list_view.dart';
 import 'package:fitness_app/widgets/running_view.dart';
 import 'package:fitness_app/widgets/title_view.dart';
 import 'package:fitness_app/widgets/workout_view.dart';
@@ -92,6 +93,22 @@ class _TrainingScreenState extends State<TrainingScreen>
                 1.0,
                 curve: Curves.fastOutSlowIn,
               )),
+        ),
+      ),
+    );
+
+    _listviews.add(
+      AreaListView(
+        mainScreenAnimationController: _animationController,
+        mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+            parent: _animationController,
+            curve: Interval(
+              (1 / count) * 5,
+              1.0,
+              curve: Curves.fastOutSlowIn,
+            ),
+          ),
         ),
       ),
     );
