@@ -39,3 +39,12 @@ flutter:
     - lib/assets/images/area1.png
     - lib/assets/images/area2.png
     - lib/assets/images/area3.png
+
+    - lib/assets/images/tab_1.png
+    - lib/assets/images/tab_1s.png
+    - lib/assets/images/tab_2.png
+    - lib/assets/images/tab_2s.png
+    - lib/assets/images/tab_3.png
+    - lib/assets/images/tab_3s.png
+    - lib/assets/images/tab_4.png
+    - lib/assets/images/tab_4s.png
