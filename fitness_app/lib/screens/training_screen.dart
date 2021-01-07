@@ -78,6 +78,23 @@ class _TrainingScreenState extends State<TrainingScreen>
         ),
       ),
     );
+
+    _listviews.add(
+      TitleView(
+        titleText: 'Area of focus',
+        subText: 'more',
+        animationController: _animationController,
+        animation: Tween<double>(begin: 0.0, end: 1.0).animate(
+          CurvedAnimation(
+              parent: _animationController,
+              curve: Interval(
+                (1 / count) * 4,
+                1.0,
+                curve: Curves.fastOutSlowIn,
+              )),
+        ),
+      ),
+    );
   }
 
   @override
