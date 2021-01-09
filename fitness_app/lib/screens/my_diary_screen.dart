@@ -247,6 +247,9 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
           children: [
             _getMainListViewUI(),
             _getAppBarUI(),
+            SizedBox(
+              height: MediaQuery.of(context).padding.bottom,
+            )
           ],
         ),
       ),

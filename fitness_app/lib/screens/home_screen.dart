@@ -1,5 +1,8 @@
 import 'package:fitness_app/app_theme.dart';
+import 'package:fitness_app/models/tabIcon_data.dart';
 import 'package:fitness_app/screens/my_diary_screen.dart';
+import 'package:fitness_app/screens/training_screen.dart';
+import 'package:fitness_app/widgets/bottom_bar_view.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -10,6 +13,7 @@ class HomeScreen extends StatefulWidget {
 class _MyHomeScreenState extends State<HomeScreen>
     with TickerProviderStateMixin {
   AnimationController _animationController;
+  List<TabIconData> _tabIconsList = TabIconData.tabIconsList;
   Widget _tabBody = Container(color: AppTheme.background);
 
   @override
@@ -51,12 +55,50 @@ class _MyHomeScreenState extends State<HomeScreen>
               return Stack(
                 children: [
                   _tabBody,
+                  _bottomBar(),
                 ],
               );
             }
           },
         ),
       ),
+    );
+  }
+
+  Widget _bottomBar() {
+    return Column(
+      children: [
+        const Expanded(child: SizedBox()),
+        BottomBarView(
+          tabIconeList: _tabIconsList,
+          addClick: () {},
+          changeIndex: (index) {
+            if (index == 0 || index == 2) {
+              _animationController.reverse().then((value) {
+                if (!mounted) {
+                  return;
+                }
+                setState(() {
+                  _tabBody = MyDiaryScreen(
+                    animationController: _animationController,
+                  );
+                });
+              });
+            } else if (index == 1 || index == 3) {
+              _animationController.reverse().then((value) {
+                if (!mounted) {
+                  return;
+                }
+                setState(() {
+                  _tabBody = TrainingScreen(
+                    animationController: _animationController,
+                  );
+                });
+              });
+            }
+          },
+        ),
+      ],
     );
   }
 }

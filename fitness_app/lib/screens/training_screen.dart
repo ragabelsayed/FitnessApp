@@ -8,13 +8,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 class TrainingScreen extends StatefulWidget {
+  final AnimationController animationController;
+
+  const TrainingScreen({this.animationController});
   @override
   _TrainingScreenState createState() => _TrainingScreenState();
 }
 
 class _TrainingScreenState extends State<TrainingScreen>
     with TickerProviderStateMixin {
-  AnimationController _animationController;
   Animation _topBarAnimation;
   List<Widget> _listviews = [];
   DateTime _selectedDate;
@@ -24,13 +26,9 @@ class _TrainingScreenState extends State<TrainingScreen>
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(milliseconds: 600),
-    );
     _topBarAnimation =
         Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-      parent: _animationController,
+      parent: widget.animationController,
       curve: Interval(0, 0.5, curve: Curves.fastOutSlowIn),
     ));
     _addAllListData();
@@ -66,10 +64,10 @@ class _TrainingScreenState extends State<TrainingScreen>
       TitleView(
         titleText: 'Your program',
         subText: 'Details',
-        animationController: _animationController,
+        animationController: widget.animationController,
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
-            parent: _animationController,
+            parent: widget.animationController,
             curve: Interval(
               (1 / count) * 0,
               1.0,
@@ -82,10 +80,10 @@ class _TrainingScreenState extends State<TrainingScreen>
 
     _listviews.add(
       WorkoutView(
-        animationController: _animationController,
+        animationController: widget.animationController,
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
-            parent: _animationController,
+            parent: widget.animationController,
             curve: Interval(
               (1 / count) * 2,
               1.0,
@@ -98,10 +96,10 @@ class _TrainingScreenState extends State<TrainingScreen>
 
     _listviews.add(
       RunningView(
-        animationController: _animationController,
+        animationController: widget.animationController,
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
-            parent: _animationController,
+            parent: widget.animationController,
             curve: Interval(
               (1 / count) * 3,
               1.0,
@@ -116,10 +114,10 @@ class _TrainingScreenState extends State<TrainingScreen>
       TitleView(
         titleText: 'Area of focus',
         subText: 'more',
-        animationController: _animationController,
+        animationController: widget.animationController,
         animation: Tween<double>(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
-              parent: _animationController,
+              parent: widget.animationController,
               curve: Interval(
                 (1 / count) * 4,
                 1.0,
@@ -131,10 +129,10 @@ class _TrainingScreenState extends State<TrainingScreen>
 
     _listviews.add(
       AreaListView(
-        mainScreenAnimationController: _animationController,
+        mainScreenAnimationController: widget.animationController,
         mainScreenAnimation: Tween<double>(begin: 0.0, end: 1.0).animate(
           CurvedAnimation(
-            parent: _animationController,
+            parent: widget.animationController,
             curve: Interval(
               (1 / count) * 5,
               1.0,
@@ -144,12 +142,6 @@ class _TrainingScreenState extends State<TrainingScreen>
         ),
       ),
     );
-  }
-
-  @override
-  void dispose() {
-    _animationController.dispose();
-    super.dispose();
   }
 
   void _dataPicker() {
@@ -183,6 +175,9 @@ class _TrainingScreenState extends State<TrainingScreen>
           children: [
             _getMainListViewUI(),
             _getAppBarUI(),
+            SizedBox(
+              height: MediaQuery.of(context).padding.bottom,
+            ),
           ],
         ),
       ),
@@ -206,7 +201,7 @@ class _TrainingScreenState extends State<TrainingScreen>
             ),
             scrollDirection: Axis.vertical,
             itemBuilder: (context, index) {
-              _animationController.forward();
+              widget.animationController.forward();
               return _listviews[index];
             },
           );
@@ -219,7 +214,7 @@ class _TrainingScreenState extends State<TrainingScreen>
     return Column(
       children: [
         AnimatedBuilder(
-          animation: _animationController,
+          animation: widget.animationController,
           builder: (context, child) {
             return FadeTransition(
               opacity: _topBarAnimation,
