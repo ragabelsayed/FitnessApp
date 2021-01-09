@@ -1,14 +1,16 @@
 import 'package:fitness_app/app_theme.dart';
+import 'package:fitness_app/custom_drawer.dart';
 import 'package:fitness_app/widgets/body_measurement.dart';
 import 'package:fitness_app/widgets/glass_view.dart';
 import 'package:fitness_app/widgets/meals_list_view.dart';
 import 'package:fitness_app/widgets/mediterranean_diet_view.dart';
 
-import 'package:fitness_app/widgets/title_view.dart';
-import 'package:fitness_app/widgets/water_view.dart';
-import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../widgets/title_view.dart';
+import '../widgets/water_view.dart';
 
 class MyDiaryScreen extends StatefulWidget {
   static const routeName = '/';
@@ -242,6 +244,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
     return Container(
       color: AppTheme.background,
       child: Scaffold(
+        drawer: CustomeDrawer(),
         backgroundColor: Colors.transparent,
         body: Stack(
           children: [

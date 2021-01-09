@@ -1,10 +1,9 @@
-import 'package:fitness_app/app_theme.dart';
 import 'dart:math' as math;
 
-import 'package:fitness_app/models/tabIcon_data.dart';
 import 'package:flutter/material.dart';
-
 import '../main.dart';
+import '../app_theme.dart';
+import '../models/tabIcon_data.dart';
 
 class BottomBarView extends StatefulWidget {
   final Function(int index) changeIndex;

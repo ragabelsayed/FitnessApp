@@ -126,68 +126,71 @@ class CustomeDrawer extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return Drawer(
-      //backgroundColor: AppTheme.notWhite.withOpacity(0.5),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.only(top: 40.0),
-            child: Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    height: 120,
-                    width: 120,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      boxShadow: [
-                        BoxShadow(
-                          color: AppTheme.gray.withOpacity(0.6),
-                          offset: const Offset(2.0, 4.0),
-                          blurRadius: 8,
-                        ),
-                      ],
+    return Padding(
+      padding: EdgeInsets.only(top: MediaQuery.of(context).padding.top),
+      child: Drawer(
+        //backgroundColor: AppTheme.notWhite.withOpacity(0.5),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Container(
+              width: double.infinity,
+              padding: const EdgeInsets.only(top: 40.0),
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Container(
+                      height: 120,
+                      width: 120,
+                      decoration: BoxDecoration(
+                        shape: BoxShape.circle,
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppTheme.gray.withOpacity(0.6),
+                            offset: const Offset(2.0, 4.0),
+                            blurRadius: 8,
+                          ),
+                        ],
+                      ),
+                      child: ClipRRect(
+                          borderRadius: const BorderRadius.all(
+                            Radius.circular(60.0),
+                          ),
+                          child: Image.asset('lib/assets/images/unnamed.png')),
                     ),
-                    child: ClipRRect(
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(60.0),
-                        ),
-                        child: Image.asset('lib/assets/images/unnamed.png')),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10, left: 4),
-                    child: Text(
-                      'Ragab Elsayed',
-                      style: TextStyle(
-                          fontWeight: FontWeight.w600,
-                          color: AppTheme.gray,
-                          fontSize: 18),
+                    Padding(
+                      padding: const EdgeInsets.only(top: 10, left: 4),
+                      child: Text(
+                        'Ragab Elsayed',
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: AppTheme.gray,
+                            fontSize: 18),
+                      ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
             ),
-          ),
-          const SizedBox(
-            height: 4,
-          ),
-          Divider(
-            height: 1,
-            color: AppTheme.gray.withOpacity(0.6),
-          ),
-          Expanded(
-            child: ListView.builder(
-              itemCount: _drawerItems.length,
-              itemBuilder: (context, item) => _drawerItems[item],
+            const SizedBox(
+              height: 4,
             ),
-          ),
-        ],
+            Divider(
+              height: 1,
+              color: AppTheme.gray.withOpacity(0.6),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: _drawerItems.length,
+                itemBuilder: (context, item) => _drawerItems[item],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,11 +1,12 @@
-import 'package:fitness_app/app_theme.dart';
-import 'package:fitness_app/widgets/area_list_view.dart';
-import 'package:fitness_app/widgets/running_view.dart';
-import 'package:fitness_app/widgets/title_view.dart';
-import 'package:fitness_app/widgets/workout_view.dart';
+import 'package:intl/intl.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
+
+import '../app_theme.dart';
+import '../widgets/area_list_view.dart';
+import '../widgets/running_view.dart';
+import '../widgets/title_view.dart';
+import '../widgets/workout_view.dart';
 
 class TrainingScreen extends StatefulWidget {
   final AnimationController animationController;
