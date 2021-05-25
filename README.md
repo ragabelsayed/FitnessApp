@@ -5,4 +5,4 @@ MyFitness app clone from flutter UI templates.
 - Used Animations in it.
 - Bottom navigation bar
 # Demo
-<img src="fitness_app/lib/gif/fitnessAppDemo.gif"  width="400" height="600">
+<img src="fitness_app/lib/gif/fitnessAppDemo.gif"  width="400" height="650">
