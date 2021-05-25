@@ -6,9 +6,10 @@ import '../main.dart';
 
 class WorkoutView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
-  const WorkoutView({this.animationController, this.animation});
+  const WorkoutView(
+      {required this.animationController, required this.animation});
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(

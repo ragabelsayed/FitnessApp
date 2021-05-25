@@ -6,8 +6,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 class MealsListView extends StatefulWidget {
   final AnimationController mainScreenAnimationController;
-  final Animation mainScreenAnimation;
-  MealsListView({this.mainScreenAnimationController, this.mainScreenAnimation});
+  final Animation<double> mainScreenAnimation;
+  MealsListView(
+      {required this.mainScreenAnimationController,
+      required this.mainScreenAnimation});
 
   @override
   _MealsListViewState createState() => _MealsListViewState();
@@ -15,7 +17,7 @@ class MealsListView extends StatefulWidget {
 
 class _MealsListViewState extends State<MealsListView>
     with SingleTickerProviderStateMixin {
-  AnimationController animationController;
+  late AnimationController animationController;
   List<MealsListData> mealsListData = MealsListData.tabIconsList;
 
   @override
@@ -80,9 +82,11 @@ class _MealsListViewState extends State<MealsListView>
 class MealsView extends StatelessWidget {
   final MealsListData mealsListData;
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
   const MealsView(
-      {this.mealsListData, this.animationController, this.animation});
+      {required this.mealsListData,
+      required this.animationController,
+      required this.animation});
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(

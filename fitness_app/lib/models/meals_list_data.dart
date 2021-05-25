@@ -11,7 +11,7 @@ class MealsListData {
     this.title = '',
     this.startColor = '',
     this.endColor = '',
-    this.meals,
+    required this.meals,
     this.kcal = 0,
   });
 

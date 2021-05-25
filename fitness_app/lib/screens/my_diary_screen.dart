@@ -16,7 +16,7 @@ class MyDiaryScreen extends StatefulWidget {
   static const routeName = '/';
   final AnimationController animationController;
 
-  const MyDiaryScreen({this.animationController});
+  const MyDiaryScreen({required this.animationController});
 
   @override
   _MyDiaryScreenState createState() => _MyDiaryScreenState();
@@ -25,20 +25,24 @@ class MyDiaryScreen extends StatefulWidget {
 class _MyDiaryScreenState extends State<MyDiaryScreen>
     with SingleTickerProviderStateMixin {
   List<Widget> _listViews = [];
-  Animation _topBarAnimation;
+  late Animation<double> _topBarAnimation =
+      Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+    parent: widget.animationController,
+    curve: Interval(0, 0.5, curve: Curves.fastOutSlowIn),
+  ));
   double _topBarOpacity = 0.0;
   final ScrollController _scrollController = ScrollController();
-  DateTime _selectedDate;
+  DateTime? _selectedDate;
 
   @override
   void initState() {
     super.initState();
 
-    _topBarAnimation =
-        Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
-      parent: widget.animationController,
-      curve: Interval(0, 0.5, curve: Curves.fastOutSlowIn),
-    ));
+    // _topBarAnimation =
+    //     Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+    //   parent: widget.animationController,
+    //   curve: Interval(0, 0.5, curve: Curves.fastOutSlowIn),
+    // ));
     _addAllListData();
 
     _scrollController.addListener(() {
@@ -371,7 +375,7 @@ class _MyDiaryScreenState extends State<MyDiaryScreen>
                                   Text(
                                     _selectedDate == null
                                         ? '15 May'
-                                        : '${DateFormat.MMMd().format(_selectedDate)}',
+                                        : '${DateFormat.MMMd().format(_selectedDate!)}',
                                     textAlign: TextAlign.left,
                                     style: GoogleFonts.roboto(
                                       fontWeight: FontWeight.normal,

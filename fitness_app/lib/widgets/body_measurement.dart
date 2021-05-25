@@ -4,8 +4,9 @@ import 'package:google_fonts/google_fonts.dart';
 
 class BodyMeasurementView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
-  BodyMeasurementView({this.animationController, this.animation});
+  final Animation<double> animation;
+  BodyMeasurementView(
+      {required this.animationController, required this.animation});
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(

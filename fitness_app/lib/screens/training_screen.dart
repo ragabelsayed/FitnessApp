@@ -11,16 +11,20 @@ import '../widgets/workout_view.dart';
 class TrainingScreen extends StatefulWidget {
   final AnimationController animationController;
 
-  const TrainingScreen({this.animationController});
+  const TrainingScreen({required this.animationController});
   @override
   _TrainingScreenState createState() => _TrainingScreenState();
 }
 
 class _TrainingScreenState extends State<TrainingScreen>
     with TickerProviderStateMixin {
-  Animation _topBarAnimation;
+  late Animation<double> _topBarAnimation =
+      Tween<double>(begin: 0.0, end: 1.0).animate(CurvedAnimation(
+    parent: widget.animationController,
+    curve: Interval(0, 0.5, curve: Curves.fastOutSlowIn),
+  ));
   List<Widget> _listviews = [];
-  DateTime _selectedDate;
+  DateTime? _selectedDate;
   double _topBarOpacity = 0.0;
   final ScrollController _scrollController = ScrollController();
 
@@ -297,7 +301,7 @@ class _TrainingScreenState extends State<TrainingScreen>
                                   Text(
                                     _selectedDate == null
                                         ? '15 May'
-                                        : '${DateFormat.MMMd().format(_selectedDate)}',
+                                        : '${DateFormat.MMMd().format(_selectedDate!)}',
                                     textAlign: TextAlign.left,
                                     style: GoogleFonts.roboto(
                                       fontWeight: FontWeight.normal,

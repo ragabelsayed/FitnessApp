@@ -14,7 +14,7 @@ class HomeScreen extends StatefulWidget {
 
 class _MyHomeScreenState extends State<HomeScreen>
     with TickerProviderStateMixin {
-  AnimationController _animationController;
+  late AnimationController _animationController;
   List<TabIconData> _tabIconsList = TabIconData.tabIconsList;
   Widget _tabBody = Container(color: AppTheme.background);
 

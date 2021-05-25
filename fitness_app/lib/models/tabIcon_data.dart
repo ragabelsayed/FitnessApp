@@ -5,7 +5,7 @@ class TabIconData {
   String selectedImage;
   bool isSelected;
   int index;
-  AnimationController animationController;
+  AnimationController? animationController;
 
   TabIconData({
     this.image = '',

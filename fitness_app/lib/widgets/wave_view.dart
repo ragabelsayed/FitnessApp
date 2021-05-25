@@ -14,8 +14,8 @@ class WaveView extends StatefulWidget {
 }
 
 class _WaveViewState extends State<WaveView> with TickerProviderStateMixin {
-  AnimationController _animationController;
-  AnimationController _waveAnimationController;
+  late AnimationController _animationController;
+  late AnimationController _waveAnimationController;
   Offset bottleOffset1 = Offset(0, 0);
   List<Offset> animList1 = [];
   Offset bottleOffset2 = Offset(60, 0);

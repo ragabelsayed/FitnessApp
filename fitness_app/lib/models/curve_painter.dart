@@ -3,13 +3,13 @@ import 'dart:math' as math;
 
 class CurvePainter extends CustomPainter {
   final double angle;
-  final List<Color> colors;
-  CurvePainter({this.colors, this.angle});
+  final List<Color>? colors;
+  CurvePainter({this.colors, required this.angle});
   @override
   void paint(Canvas canvas, Size size) {
     List<Color> colorList = [];
     if (colors != null) {
-      colorList = colors;
+      colorList = colors!;
     } else {
       colorList.addAll([Colors.white, Colors.white]);
     }

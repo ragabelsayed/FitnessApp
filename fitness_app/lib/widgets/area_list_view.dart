@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 
 class AreaListView extends StatefulWidget {
   final AnimationController mainScreenAnimationController;
-  final Animation mainScreenAnimation;
+  final Animation<double> mainScreenAnimation;
   const AreaListView(
-      {this.mainScreenAnimationController, this.mainScreenAnimation});
+      {required this.mainScreenAnimationController,
+      required this.mainScreenAnimation});
 
   @override
   _AreaListViewState createState() => _AreaListViewState();
@@ -13,7 +14,7 @@ class AreaListView extends StatefulWidget {
 
 class _AreaListViewState extends State<AreaListView>
     with TickerProviderStateMixin {
-  AnimationController _animationController;
+  late AnimationController _animationController;
   List<String> _areaListData = [
     'lib/assets/images/area1.png',
     'lib/assets/images/area2.png',
@@ -58,7 +59,7 @@ class _AreaListViewState extends State<AreaListView>
                     _areaListData.length,
                     (index) {
                       final int count = 4;
-                      final Animation animation =
+                      final Animation<double> animation =
                           Tween<double>(begin: 0, end: 1).animate(
                         CurvedAnimation(
                           parent: _animationController,
@@ -95,9 +96,12 @@ class _AreaListViewState extends State<AreaListView>
 
 class AreaView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
   final String image;
-  const AreaView({this.animationController, this.animation, this.image});
+  const AreaView(
+      {required this.animationController,
+      required this.animation,
+      required this.image});
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(

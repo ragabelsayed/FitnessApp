@@ -4,9 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 
 class RunningView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
-  const RunningView({this.animationController, this.animation});
+  const RunningView(
+      {required this.animationController, required this.animation});
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(

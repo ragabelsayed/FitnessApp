@@ -7,8 +7,8 @@ import '../main.dart';
 
 class WaterView extends StatelessWidget {
   final AnimationController animationController;
-  final Animation animation;
-  WaterView({this.animationController, this.animation});
+  final Animation<double> animation;
+  WaterView({required this.animationController, required this.animation});
   @override
   Widget build(BuildContext context) {
     return AnimatedBuilder(

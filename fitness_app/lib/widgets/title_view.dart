@@ -8,13 +8,13 @@ class TitleView extends StatelessWidget {
   final String titleText;
   final String subText;
   final AnimationController animationController;
-  final Animation animation;
+  final Animation<double> animation;
 
   const TitleView({
-    this.titleText,
-    this.subText,
-    this.animationController,
-    this.animation,
+    required this.titleText,
+    required this.subText,
+    required this.animationController,
+    required this.animation,
   });
   @override
   Widget build(BuildContext context) {
