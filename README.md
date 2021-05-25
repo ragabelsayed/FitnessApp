@@ -6,3 +6,5 @@ MyFitness app clone from flutter UI templates.
 - Bottom navigation bar
 # Demo
 <img src="https://drive.google.com/file/d/1CZvFAUoqhds3QyVNT5L4Nty0ydPYBrEw/view?usp=sharing">
+
+[GitHub](https://drive.google.com/file/d/1CZvFAUoqhds3QyVNT5L4Nty0ydPYBrEw/view?usp=sharing)
